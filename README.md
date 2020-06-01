@@ -1,11 +1,10 @@
-# Laravel
-Laravel Cheatsheet
-===================
-
+# Laravel Cheatsheet
 
 #### Artisan  ####
+```
 // Displays help for a given command
 php artisan --help OR -h
+```
 // Do not output any message
 php artisan --quiet OR -q
 // Display this application version
