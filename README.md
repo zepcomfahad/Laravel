@@ -166,37 +166,65 @@ php artisan migrate:install [--database[="..."]]
 // Create a new migration file
 php artisan migrate:make name [--bench="vendor/package"] [--create] [--package[="..."]] [--path[="..."]] [--table[="..."]]
 ```
-
+```
 // Reset and re-run all migrations
 php artisan migrate:refresh [--database[="..."]] [--seed]
+```
+
+```
 // Rollback all database migrations
 php artisan migrate:reset [--database[="..."]] [--pretend]
+```
+
+```
 // Rollback the last database migration
 php artisan migrate:rollback [--database[="..."]] [--pretend]
+```
+
+```
 // Publish a package's migrations to migration directory
 php artisan migrate:publish vendor/package
+```
 
+```
 // Listen to a given queue
 php artisan queue:listen [--queue[="..."]] [--delay[="..."]] [--memory[="..."]] [--timeout[="..."]] [connection]
+```
+
+```
 // Subscribe a URL to an Iron.io push queue
 php artisan queue:subscribe [--type[="..."]] queue url
+```
+
+```
 // Process the next job on a queue
 php artisan queue:work [--queue[="..."]] [--delay[="..."]] [--memory[="..."]] [--sleep] [connection]
+```
+
+```
 // Create a migration for the session database table
 php artisan session:table
+```
+
+```
 // Publish a package's views to the application
 php artisan view:publish [--path[="..."]] package
+```
+
+```
 php artisan tail [--path[="..."]] [--lines[="..."]] [connection]
-                
+```                
 
 #### Composer  ####
+```
 composer create-project laravel/laravel folder_name
 composer install
 composer update
 composer dump-autoload [--optimize]
 composer self-update
-                
+```                
 #### Configuration  ####
+```
 Config::get('app.timezone');
 //get with Default value
  Config::get('app.timezone', 'UTC');
@@ -223,8 +251,9 @@ throw new NotFoundHttpException;
 Route::get('foo/{bar}', function($bar){});
 Route::get('foo/{bar?}', function($bar = 'bar'){});
                 
-
+```
 #### HTTP Verbs  ####
+```
 Route::any('foo', function(){});
 Route::post('foo', function(){});
 Route::put('foo', function(){});
@@ -273,16 +302,18 @@ Route Namespacing
 Sub-Domain Routing
 // {sub} will be passed to the closure
  Route::group(array('domain' => '{sub}.example.com'), function(){});
-                
+```                
 #### App  ####
+```
 App::environment();
 // test equal to
  App::environment('local');
 App::runningInConsole();
 App::runningUnitTests();
-                
+```                
 
 #### Log  ####
+```
 Log::info('info');
 Log::info('info',array('context'=>'additional info'));
 Log::error('error');
@@ -293,8 +324,9 @@ Log::warning('warning');
  Log::listen(function($level, $message, $context) {});
 // get all ran queries.
 DB::getQueryLog();
-                
+```                
 #### URLs  ####
+```
 URL::full();
 URL::current();
 URL::previous();
@@ -309,8 +341,9 @@ URL::getRequest();
 URL::setRequest($request);
 URL::getGenerator();
 URL::setGenerator($generator);
-                
+```                
 #### Events  ####
+```
 Event::fire('foo.bar', array($bar));
 Event::listen('foo.bar', function($bar){});
 Event::listen('foo.*', function($bar){});
@@ -322,8 +355,9 @@ Event::flusher('foo', function($bar){});
 Event::flush('foo');
 Event::forget('foo');
 Event::subscribe(new FooEventHandler);
-                
+```                
 #### Database  ####
+```
 DB::connection('connection_name');
 DB::statement('drop table users');
 DB::listen(function($sql, $bindings, $time){ code_here; });
@@ -332,8 +366,9 @@ DB::transaction(function(){ transaction_code_here; });
 DB::table('users')->remember($time)->get();
 // Escape raw input
 DB::raw('sql expression here');
-                
+```                
 #### Selects  ####
+```
 DB::table('name')->get();
 DB::table('name')->distinct()->get();
 DB::table('name')->select('column as column_alias')->get();
@@ -373,9 +408,9 @@ DB::table('name')->delete();
 // Delete specific records
 DB::table('name')->where('id', '>', '10')->delete();
 DB::table('name')->truncate();
-                
+```             
 #### Aggregates ####
-
+```
 DB::table('name')->count();
 DB::table('name')->max('column');
 DB::table('name')->min('column');
@@ -455,9 +490,9 @@ Model::withTrashed()->where('cars', 2)->get();
 Model::where('cars', 2)->forceDelete();
 // Force the result set to only included soft deletes
  Model::onlyTrashed()->where('cars', 2)->get();
-                
-
+```                
 #### Events ####
+```
 Model::creating(function($model){});
 Model::created(function($model){});
 Model::updating(function($model){});
