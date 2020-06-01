@@ -502,14 +502,18 @@ Model::saved(function($model){});
 Model::deleting(function($model){});
 Model::deleted(function($model){});
 Model::observe(new FooObserver);
-                
-Eloquent Configuration
+```
+
+#### Eloquent Configuration  ####
+```
 // Disables mass assignment exceptions from being thrown from model inserts and updates
  Eloquent::unguard();
 // Renables any ability to throw mass assignment exceptions
  Eloquent::reguard();
-                
-Pagination 
+```                
+
+#### Pagination  ####
+```
 // Auto-Magic Pagination
  Model::paginate(15);
 Model::where('cars', 2)->paginate(15);
@@ -519,8 +523,9 @@ Model::where('cars', 2)->paginate(15);
  Paginator::make($items, $totalItems, $perPage);
 // Print page navigators in view
 $variable->links();
-                
-Schema 
+```                
+#### Schema  ####
+```
 // Indicate that the table needs to be created
  Schema::create('table', function($table)
 {
@@ -548,8 +553,9 @@ $table->dropColumn(string|array);
 $table->engine = 'InnoDB';
 // Only work on MySQL
 $table->string('name')->after('email');
-                
-Indexes
+```                
+#### Indexes  ####
+```
 $table->string('column')->unique();
 $table->primary('column');
 // Creates a dual primary key
@@ -567,14 +573,16 @@ $table->index(array('first', 'last'), 'key_name');
 $table->dropPrimary('table_column_primary');
 $table->dropUnique('table_column_unique');
 $table->dropIndex('table_column_index');
-                
-Foreign Keys
+```                
+#### Foreign Keys  ####
+```
 $table->foreign('user_id')->references('id')->on('users');
 $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'|'restrict'|'set null'|'no action');
 $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade'|'restrict'|'set null'|'no action');
 $table->dropForeign('posts_user_id_foreign');
-                
-Column Types
+```                
+#### Column Types  ####
+```
 // Increments
 $table->increments('id');
 $table->bigIncrements('id');
@@ -621,8 +629,9 @@ $table->morphs('parent');
 ->nullable()
 ->default($value)
 ->unsigned()
-                
-Input 
+```                
+#### Input  ####
+```
 Input::get('key');
 // Default if the key is missing
  Input::get('key', 'default');
@@ -643,8 +652,10 @@ Session Input (flash)
  Input::flashExcept('foo', 'baz');
 // Retrieve an old input item
  Input::old('key','default_value');
-                
-Files
+```
+
+#### Files  ####
+
 // Use a file that's been uploaded
  Input::file('filename');
 // Determine if a file was uploaded
@@ -660,7 +671,7 @@ Input::file('name')->getMimeType();
 // Move an uploaded file
  Input::file('name')->move($destinationPath, $fileName);
                 
-Cache 
+#### Cache  ####
 Cache::put('key', 'value', $minutes);
 Cache::add('key', 'value', $minutes);
 Cache::forever('key', 'value');
