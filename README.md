@@ -439,6 +439,7 @@ DB::table('name')->select(DB::raw('count(*) as count, column2'))->get();
 ```                
 
 #### Eloquent ####
+```
 Model::create(array('key' => 'value'));
 // Find first matching record by attributes or create
  Model::firstOrCreate(array('key' => 'value'));
@@ -490,7 +491,8 @@ Model::withTrashed()->where('cars', 2)->get();
 Model::where('cars', 2)->forceDelete();
 // Force the result set to only included soft deletes
  Model::onlyTrashed()->where('cars', 2)->get();
-```                
+```
+
 #### Events ####
 ```
 Model::creating(function($model){});
