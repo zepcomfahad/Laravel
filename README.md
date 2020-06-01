@@ -701,7 +701,8 @@ Cache::section('group')->put('key', $value);
 Cache::section('group')->get('key');
 Cache::section('group')->flush();
 ```                
-Cookies 
+
+#### Cookies  ####
 ```
 Cookie::get('key');
 Cookie::get('key', 'default');
@@ -718,7 +719,8 @@ $response = Response::make('Hello World');
 // Add a cookie to the response
 $response->withCookie(Cookie::make('name', 'value', $minutes));
 ```                
-Sessions 
+ 
+#### Sessions  ####
 ```
 Session::get('key');
 // Returns an item from the session
@@ -747,7 +749,8 @@ Session::get('key', function(){ return 'default'; });
 // Reflash a subset of the current flash data
  Session::keep(array('key1', 'key2'));
 ```                
-Requests 
+ 
+#### Requests  ####
 ```
 // url: http://xx.com/aa/bb
  Request::url();
