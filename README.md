@@ -5,33 +5,71 @@
 // Displays help for a given command
 php artisan --help OR -h
 ```
+
+```
 // Do not output any message
 php artisan --quiet OR -q
+```
+
+```
 // Display this application version
 php artisan --version OR -V
+```
+
+```
 // Do not ask any interactive question
 php artisan --no-interaction OR -n
+```
+
+```
 // Force ANSI output
 php artisan --ansi
+```
+
+```
 // Disable ANSI output
 php artisan --no-ansi
+```
+
+```
 // The environment the command should run under
 php artisan --env
+```
+
+```
 // -v|vv|vvv Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
 php artisan --verbose
+```
 
+```
 // Display the framework change list
 php artisan changes
+```
+
+```
 // Remove the compiled class file
 php artisan clear-compiled
+```
+```
 // Put the application into maintenance mode
 php artisan down
+```
+
+```
 // Regenerate framework autoload files
 php artisan dump-autoload
+```
+
+```
 // Display the current framework environment
 php artisan env
+```
+
+```
 // Displays help for a command
 php artisan help
+```
+
 // Lists commands
 php artisan list
 // Optimize the framework for better performance
