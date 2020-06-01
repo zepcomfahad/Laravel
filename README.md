@@ -69,48 +69,104 @@ php artisan env
 // Displays help for a command
 php artisan help
 ```
-
+```
 // Lists commands
 php artisan list
+```
+```
 // Optimize the framework for better performance
 php artisan optimize
+```
+
+```
 // List all registered routes
 php artisan routes
+```
+
+```
 // Serve the application on the PHP development server
 php artisan serve
+```
+
+```
 // Change the default port
 php artisan serve --port 8080
+```
+
+```
 // Get it to work outside localhost
 php artisan serve --host 0.0.0.0
+```
+
+```
 // Interact with your application
 php artisan tinker
+```
+
+```
 // Bring the application out of maintenance mode
 php artisan up
+```
+
+```
 // Create a new package workbench
 php artisan workbench
+```
+
+```
 // Publish a package's assets to the public directory
 php artisan asset:publish [--bench[="vendor/package"]] [--path[="..."]] [package]
+```
+
+```
 // Create a migration for the password reminders table
 php artisan auth:reminders-table
+```
+
+```
 // Flush the application cache
 php artisan cache:clear
+```
+
+```
 // Create a new Artisan command (L3:task)
 php artisan command:make name [--command[="..."]] [--path[="..."]] [--namespace[="..."]]
+```
+
+```
 // Publish a package's configuration to the application
 php artisan config:publish
+```
+
+```
 // Create a new resourceful controller
 php artisan controller:make [--bench="vendor/package"]
+```
+
+```
 // Seed the database with records
 php artisan db:seed [--class[="..."]] [--database[="..."]]
+```
+
+```
 // Set the application key
 php artisan key:generate
+```
 
+```
 // Database migrations
 php artisan migrate [--bench="vendor/package"] [--database[="..."]] [--path[="..."]] [--package[="..."]] [--pretend] [--seed]
+```
+
+```
 // Create the migration repository
 php artisan migrate:install [--database[="..."]]
+```
+```
 // Create a new migration file
 php artisan migrate:make name [--bench="vendor/package"] [--create] [--package[="..."]] [--path[="..."]] [--table[="..."]]
+```
+
 // Reset and re-run all migrations
 php artisan migrate:refresh [--database[="..."]] [--seed]
 // Rollback all database migrations
