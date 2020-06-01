@@ -424,8 +424,9 @@ DB::table('name')->remember(5)->get();
 DB::table('name')->remember(5, 'cache-key-name')->get();
 DB::table('name')->cacheTags('my-key')->remember(5)->get();
 DB::table('name')->cacheTags(array('my-first-key','my-second-key'))->remember(5)->get();
-                
-Raw Expressions
+```                
+#### Raw Expressions ####
+```
 // return rows
 DB::select('select * from users where id = ?', array('value'));
 // return nr affected rows
@@ -482,9 +483,11 @@ Model::all()->take(10);
 Model::all()->skip(10);
 // Default Eloquent sort is ascendant
  Model::orderBy('column')->get();
-Model::orderBy('column','desc')->get();
-                
-Soft Delete
+Model::orderBy('column','desc')->get();             
+```
+
+#### Soft Delete ####
+```
 Model::withTrashed()->where('cars', 2)->get();
 // Include the soft deleted models in the results
  Model::withTrashed()->where('cars', 2)->restore();
