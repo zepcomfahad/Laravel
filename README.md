@@ -436,7 +436,7 @@ DB::delete('delete from bar');
 DB::statement('update foo set bar=2');
 // raw expression inside a statement
 DB::table('name')->select(DB::raw('count(*) as count, column2'))->get();
-                
+```                
 
 #### Eloquent ####
 Model::create(array('key' => 'value'));
