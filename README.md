@@ -657,7 +657,7 @@ Session Input (flash)
 ```
 
 #### Files  ####
-
+```
 // Use a file that's been uploaded
  Input::file('filename');
 // Determine if a file was uploaded
@@ -672,8 +672,9 @@ Input::file('name')->getMimeType();
  Input::file('name')->move($destinationPath);
 // Move an uploaded file
  Input::file('name')->move($destinationPath, $fileName);
-                
+```                
 #### Cache  ####
+```
 Cache::put('key', 'value', $minutes);
 Cache::add('key', 'value', $minutes);
 Cache::forever('key', 'value');
@@ -696,8 +697,9 @@ Cache::decrement('key', $amount);
 Cache::section('group')->put('key', $value);
 Cache::section('group')->get('key');
 Cache::section('group')->flush();
-                
+```                
 Cookies 
+```
 Cookie::get('key');
 Cookie::get('key', 'default');
 // Create a cookie that lasts for ever
@@ -712,8 +714,9 @@ Cookie::get('key', 'default');
 $response = Response::make('Hello World');
 // Add a cookie to the response
 $response->withCookie(Cookie::make('name', 'value', $minutes));
-                
+```                
 Sessions 
+```
 Session::get('key');
 // Returns an item from the session
  Session::get('key', 'default');
@@ -740,8 +743,9 @@ Session::get('key', function(){ return 'default'; });
  Session::reflash();
 // Reflash a subset of the current flash data
  Session::keep(array('key1', 'key2'));
-                
+```                
 Requests 
+```
 // url: http://xx.com/aa/bb
  Request::url();
 // path: /aa/bb
@@ -780,9 +784,10 @@ Requests
  Request::isJson();
 // true if HTTP Accept header is application/json
  Request::wantsJson();
-
+```
                 
 Responses 
+```
 return Response::make($contents);
 return Response::make($contents, 200);
 return Response::json(array('key' => 'value'));
@@ -797,8 +802,9 @@ return $response;
 // Attach a cookie to a response
  return Response::make($content)
 	->withCookie(Cookie::make('key', 'value'));
-                
+```                
 Redirects 
+```
 return Redirect::to('foo/bar');
 return Redirect::to('foo/bar')->with('key', 'value');
 return Redirect::to('foo/bar')->withInput(Input::get());
@@ -816,8 +822,9 @@ return Redirect::action('FooController@baz', array('value'));
 return Redirect::action('FooController@baz', array('key' => 'value'));
 // If intended redirect is not defined, defaults to foo/bar.
  return Redirect::intended('foo/bar');
-                
-IoC 
+```                
+IoC
+```
 App::bind('foo', function($app){ return new Foo; });
 App::make('foo');
 // If this class exists, it's returned
@@ -832,8 +839,9 @@ App::make('foo');
  App::register('FooServiceProvider');
 // Listen for object resolution
  App::resolving(function($object){});
-                
+```                
 Security 
+```
 Passwords
 Hash::make('secretpassword');
 Hash::check('secretpassword', $hashedPassword);
@@ -866,14 +874,16 @@ Auth
  Auth::onceBasic();
 // Send a password reminder to a user
  Password::remind($credentials, function($message, $user){});
-                
+```                
 Encryption
+```
 Crypt::encrypt('secretstring');
 Crypt::decrypt($encryptedString);
 Crypt::setMode('ctr');
 Crypt::setCipher($cipher);
-                
-Mail 
+```                
+Mail
+```
 Mail::send('email.view', $data, function($message){});
 Mail::send(array('html.view', 'text.view'), $data, $callback);
 Mail::queue('email.view', $data, function($message){});
@@ -881,8 +891,9 @@ Mail::queueOn('queue-name', 'email.view', $data, $callback);
 Mail::later(5, 'email.view', $data, function($message){});
 // Write all email to logs instead of sending
  Mail::pretend();
-                
+```                
 Messages
+```
 // These can be used on the $message instance passed into Mail::send() or Mail::queue()
 $message->from('email@example.com', 'Mr. Example');
 $message->sender('email@example.com', 'Mr. Example');
@@ -901,8 +912,9 @@ $message->embed('foo\bar.txt');
 $message->embedData('foo', 'Data Name', $options);
 // Get the underlying Swift Message instance
 $message->getSwiftMessage();
-                
-Queues 
+```                
+Queues
+```
 Queue::push('SendMail', array('message' => $message));
 Queue::push('SendEmail@send', array('message' => $message));
 Queue::push(function($job) use $id {});
@@ -924,8 +936,9 @@ php artisan queue:failed
 php artisan queue:forget 5
 // Delete all failed jobs
 php artisan queue:flush
-                
-Validation 
+```                
+Validation
+```
 Validator::make(
 	array('key' => 'Foo'),
 	array('key' => 'required|in:Foo')
@@ -936,8 +949,9 @@ Validator::resolver(function($translator, $data, $rules, $msgs)
 {
 	return new FooValidator($translator, $data, $rules, $msgs);
 });
-                
+```                
 Rules
+```
 accepted
 active_url
 after:YYYY-MM-DD
