@@ -785,8 +785,8 @@ Requests
 // true if HTTP Accept header is application/json
  Request::wantsJson();
 ```
-                
-Responses 
+#### Responses  ####                
+ 
 ```
 return Response::make($contents);
 return Response::make($contents, 200);
@@ -803,7 +803,8 @@ return $response;
  return Response::make($content)
 	->withCookie(Cookie::make('key', 'value'));
 ```                
-Redirects 
+
+#### Redirects  ####   
 ```
 return Redirect::to('foo/bar');
 return Redirect::to('foo/bar')->with('key', 'value');
@@ -823,7 +824,8 @@ return Redirect::action('FooController@baz', array('key' => 'value'));
 // If intended redirect is not defined, defaults to foo/bar.
  return Redirect::intended('foo/bar');
 ```                
-IoC
+
+#### IoC  ####
 ```
 App::bind('foo', function($app){ return new Foo; });
 App::make('foo');
@@ -840,7 +842,8 @@ App::make('foo');
 // Listen for object resolution
  App::resolving(function($object){});
 ```                
-Security 
+ 
+#### Security  ####
 ```
 Passwords
 Hash::make('secretpassword');
@@ -875,14 +878,16 @@ Auth
 // Send a password reminder to a user
  Password::remind($credentials, function($message, $user){});
 ```                
-Encryption
+
+#### Encryption  ####
 ```
 Crypt::encrypt('secretstring');
 Crypt::decrypt($encryptedString);
 Crypt::setMode('ctr');
 Crypt::setCipher($cipher);
 ```                
-Mail
+
+#### Mail  ####
 ```
 Mail::send('email.view', $data, function($message){});
 Mail::send(array('html.view', 'text.view'), $data, $callback);
@@ -892,7 +897,8 @@ Mail::later(5, 'email.view', $data, function($message){});
 // Write all email to logs instead of sending
  Mail::pretend();
 ```                
-Messages
+
+#### Messages  ####
 ```
 // These can be used on the $message instance passed into Mail::send() or Mail::queue()
 $message->from('email@example.com', 'Mr. Example');
@@ -913,7 +919,8 @@ $message->embedData('foo', 'Data Name', $options);
 // Get the underlying Swift Message instance
 $message->getSwiftMessage();
 ```                
-Queues
+
+#### Queues  ####
 ```
 Queue::push('SendMail', array('message' => $message));
 Queue::push('SendEmail@send', array('message' => $message));
@@ -937,7 +944,8 @@ php artisan queue:forget 5
 // Delete all failed jobs
 php artisan queue:flush
 ```                
-Validation
+
+#### Validation  ####
 ```
 Validator::make(
 	array('key' => 'Foo'),
@@ -950,7 +958,8 @@ Validator::resolver(function($translator, $data, $rules, $msgs)
 	return new FooValidator($translator, $data, $rules, $msgs);
 });
 ```                
-Rules
+
+#### Rules  ####
 ```
 accepted
 active_url
